@@ -1,6 +1,6 @@
 import React from 'react'
 import WorldMap from './WorldMap'
-import { Card } from './Card'
+import Card from './Card'
 
 function Home() {
   return (

@@ -1,26 +1,26 @@
 const theme = {
-    global: {
-        font: {
-            family: 'Raleway',
-            size: '18px',
-            height: '20px'
-        },
-        colors: {
-            blue: '#00C8FF',
-            green: '#17EBA0',
-            teal: '#82FFF2',
-            purple: '#F740FF',
-            red: '#FC6161',
-            orange: '#FFBC44',
-            yellow: '#FFEB59'
-        }
+  global: {
+    font: {
+      family: 'Raleway',
+      size: '18px',
+      height: '20px',
     },
-    card: {
-        footer: {
-            pad: { horizontal: 'medium', vertical: 'small' },
-            background: '#FFFFFF27'
-        }
-    }
+    colors: {
+      brand: '#44AB96',
+      focus: '#E53855',
+      dark: '#060039',
+      'accent-1': '#E53855',
+      'accent-2': '#FFB017',
+      'accent-3': '#4484AB',
+      'accent-4': '#DA774A',
+    },
+  },
+  card: {
+    footer: {
+      pad: { horizontal: 'medium', vertical: 'small' },
+      background: '#FFFFFF27',
+    },
+  },
 }
 
 module.exports = theme
