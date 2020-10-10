@@ -3,9 +3,14 @@ import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import store from '../store'
 import LoggedOff from './LoggedOff'
+import { toBeInTheDocument } from '@testing-library/jest-dom/extend-expect'
 
 test('nav displays log in and register', () => {
-  render(<Provider store={store}><LoggedOff /></Provider>)
+  render(
+    <Provider store={store}>
+      <LoggedOff />
+    </Provider>
+  )
   const nav = screen.getByRole('navigation')
 
   expect(nav.innerHTML).toMatch(/Log In/)
@@ -13,8 +18,13 @@ test('nav displays log in and register', () => {
 })
 
 test('displays banner text', () => {
-  render(<Provider store={store}> <LoggedOff /></Provider>)
-  const banner = screen.getByRole('banner')
+  render(
+    <Provider store={store}>
+      {' '}
+      <LoggedOff />
+    </Provider>
+  )
+  const icon = screen.getByLabelText('Home')
 
-  expect(banner.innerHTML).toMatch(/Coject - Yourself, With Others/)
+  expect(icon).toBeInTheDocument()
 })

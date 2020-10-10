@@ -1,5 +1,6 @@
 import { logOff } from 'authenticare/client/auth'
 import { Anchor, Box, Header, Menu, Nav, ResponsiveContext } from 'grommet'
+import { Home } from 'grommet-icons'
 import React from 'react'
 import { connect } from 'react-redux'
 import { changeNavState, changePage } from '../actions'
@@ -12,9 +13,9 @@ function LoggedIn ({ dispatch, username }) {
   }
 
   return (
-    <Header background="dark-1" pad="medium">
+    <Header background="dark" pad="medium">
       <Box direction="row" align="center" gap="small" onClick={() => dispatch(changePage('Home'))} >
-                Coject - Yourself, With Others
+        <Home/>
       </Box>
       <Box direction="row" align="center" gap="small" onClick={() => dispatch(changePage('User'))} >
                 Logged in as {username}

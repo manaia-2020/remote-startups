@@ -16,7 +16,7 @@ const Events = ({ events }) => {
         <DataTable
           columns={columns}
           data={DATA}
-          size="small"
+          resizeable
           pad="medium" />
       </Box>
     </Tab>

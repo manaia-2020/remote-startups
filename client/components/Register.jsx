@@ -7,8 +7,9 @@ import { Controller, useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 import { addUserInfo, changeNavState, changePage } from '../actions'
-import { sendRegistrationEmail, addNewUserInfo } from '../api'
+import { addNewUserInfo, sendRegistrationEmail } from '../api'
 import { baseApiUrl as baseUrl } from '../config'
+import { labelStyle } from '../helpers'
 
 const schema = yup.object().shape({
   email: yup
@@ -31,7 +32,7 @@ const schema = yup.object().shape({
     })
 })
 
-function Register() {
+function Register () {
   const dispatch = useDispatch()
   const { handleSubmit, control, errors } = useForm({
     resolver: yupResolver(schema)
@@ -58,30 +59,30 @@ function Register() {
       })
       .catch(err => console.log(err.message))
   }
-  
+
   return (
     <Box align='center' pad='large' >
       <Form pad="small" onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor='firstName'> First Name </label>
-          <Controller as={TextInput} id='firstName' name="firstName" control={control} defaultValue="" type='text' />
-        <label htmlFor='lastName'>Last Name
-          <Controller as={TextInput} id="lastName" name="lastName" control={control} defaultValue="" type='text' />
-        </label>
-        <label htmlFor='username'>username
-          <Controller as={TextInput} id="username" name="username" control={control} defaultValue="" />
-        </label>
-        <label htmlFor='email'>Email
-          <Controller as={TextInput} id="email" name="email" control={control} defaultValue="" />
-          <p>{errors.email?.message}</p>
-        </label>
-        <label htmlFor='password'>Password
-          <Controller as={TextInput} id="password" name="password" type="password" control={control} defaultValue="" />
-          <p>{errors.password?.message}</p>
-        </label>
-        <label htmlFor='confirmPassword'>Confirm Password
-          <Controller as={TextInput} id="confirmPassword" name="confirmPassword" type="password" control={control} defaultValue="" />
-          <p>{errors.confirmPassword?.message}</p>
-        </label>
+        <label style={labelStyle} htmlFor='firstName'> First Name </label>
+        <Controller as={TextInput} id='firstName' name="firstName" control={control} defaultValue="" type='text' />
+        <label style={labelStyle} htmlFor='lastName'>Last Name</label>
+        <Controller as={TextInput} id="lastName" name="lastName" control={control} defaultValue="" type='text' />
+
+        <label style={labelStyle} htmlFor='username'>username</label>
+        <Controller as={TextInput} id="username" name="username" control={control} defaultValue="" />
+
+        <label style={labelStyle} htmlFor='email'>Email</label>
+        <Controller as={TextInput} id="email" name="email" control={control} defaultValue="" />
+        <p>{errors.email?.message}</p>
+
+        <label style={labelStyle}htmlFor='password'>Password</label>
+        <Controller as={TextInput} id="password" name="password" type="password" control={control} defaultValue="" />
+        <p>{errors.password?.message}</p>
+
+        <label style={labelStyle} htmlFor='confirmPassword'>Confirm Password</label>
+        <Controller as={TextInput} id="confirmPassword" name="confirmPassword" type="password" control={control} defaultValue="" />
+        <p>{errors.confirmPassword?.message}</p>
+
         <Button type='submit' value='Submit' label='Submit' />
       </Form>
     </Box>

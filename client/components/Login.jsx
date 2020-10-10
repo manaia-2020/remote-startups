@@ -7,8 +7,9 @@ import { useDispatch } from 'react-redux'
 import { addUserInfo, changeNavState, changePage } from '../actions'
 import { getUserInfo } from '../api'
 import { baseApiUrl as baseUrl } from '../config'
+import { labelStyle } from '../helpers'
 
-function Login() {
+function Login () {
   const dispatch = useDispatch()
   const { handleSubmit, control } = useForm({
     // resolver: yupResolver(schema)
@@ -31,12 +32,12 @@ function Login() {
   return (
     <Box align='center' pad='large' >
       <Form pad="small" onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor='username'>Username
+        <label style={labelStyle} htmlFor='username'>Username </label>
         <Controller as={TextInput} control={control} id='username' name='username' defaultValue="" type='text' />
-        </label>
-        <label htmlFor='password'>Password
+
+        <label style={labelStyle} htmlFor='password'>Password</label>
         <Controller as={TextInput} control={control} id='password' name='password' defaultValue="" type='password' />
-        </label>
+
         <Button type='submit' value='Submit' label='Submit' />
       </Form>
     </Box>

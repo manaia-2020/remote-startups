@@ -3,7 +3,8 @@ const theme = {
     font: {
       family: 'Raleway',
       size: '18px',
-      height: '20px',
+      height: '20px'
+
     },
     colors: {
       brand: '#44AB96',
@@ -12,12 +13,16 @@ const theme = {
       'accent-1': '#E53855',
       'accent-2': '#FFB017',
       'accent-3': '#4484AB',
-      'accent-4': '#DA774A',
+      'accent-4': '#DA774A'
+
     },
+    heading: {
+      font: 'Righteous'
   },
   card: {
     footer: {
       pad: { horizontal: 'medium', vertical: 'small' },
+
       background: '#FFFFFF27',
     },
   },

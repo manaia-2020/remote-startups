@@ -1,12 +1,12 @@
 import React from 'react'
+import EventCard from './eventCard'
 import WorldMap from './WorldMap'
-import Card from './Card'
 
-function Home() {
+function Home () {
   return (
     <>
       <WorldMap />
-      <Card />
+      <EventCard/>
     </>
   )
 }

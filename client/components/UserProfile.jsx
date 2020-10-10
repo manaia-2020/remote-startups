@@ -5,6 +5,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { connect } from 'react-redux'
 import { addUserInfo, changePage } from '../actions'
 import { getUserInfo, updateEmail } from '../api'
+import { labelStyle } from '../helpers'
 
 function UserProfile ({ dispatch, user }) {
   useEffect(() => {
@@ -37,9 +38,9 @@ function UserProfile ({ dispatch, user }) {
             <Image src={`avatar.images/gee_me_${user.image}.svg`} width={400} height={200} mode='fit' />
           </FormField>
           <h3>{user.firstName} {user.lastName}</h3>
-          <label htmlFor="email">Update email:
-            <Controller as={TextInput} id="email" name="email" control={control} defaultValue="" placeholder={user.email} />
-          </label>
+          <label style={labelStyle} htmlFor="email">Update email: </label>
+          <Controller as={TextInput} id="email" name="email" control={control} defaultValue="" placeholder={user.email} />
+
           <Button type='submit' value='Submit' label='Submit' />
         </Form >
       </Box>

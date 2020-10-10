@@ -8,6 +8,7 @@ exports.up = function (knex) {
     table.string('topic')
     table.string('date_start')
     table.string('date_end')
+    table.string('image')
   })
 }
 

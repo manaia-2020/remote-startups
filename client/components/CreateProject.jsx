@@ -1,12 +1,10 @@
-import { Box, Button, DateInput, Form, FormField, Image, List, Select, Tab, TextInput } from 'grommet'
-import { Aggregate, TableAdd, User } from 'grommet-icons'
+import { Box, Button, DateInput, Form, FormField, Image, Select, Tab, TextInput } from 'grommet'
+import { TableAdd } from 'grommet-icons'
 import React, { useState } from 'react'
-import { addNewEvent } from '../api/eventsApi'
 import { useForm } from 'react-hook-form'
 import { connect } from 'react-redux'
 import { changePage } from '../actions'
-
-
+import { addNewEvent } from '../api/eventsApi'
 
 const CreateProject = ({ userId, dispatch }) => {
   const { register, handleSubmit } = useForm()
@@ -59,7 +57,7 @@ const CreateProject = ({ userId, dispatch }) => {
   )
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     userId: state.createUser.id
   }
