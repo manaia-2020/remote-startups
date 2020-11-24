@@ -4,6 +4,7 @@ const theme = {
       family: 'Raleway',
       size: '18px',
       height: '20px'
+
     },
     colors: {
       brand: '#44AB96',
@@ -17,14 +18,14 @@ const theme = {
     },
     heading: {
       font: 'Righteous'
-    }
   },
   card: {
     footer: {
       pad: { horizontal: 'medium', vertical: 'small' },
-      background: '#FFFFFF27'
-    }
-  }
+
+      background: '#FFFFFF27',
+    },
+  },
 }
 
 module.exports = theme
