@@ -1,0 +1,5 @@
+extends: 'eda'
+overrides:
+  - files: ['**/*.test.js', '*.js']
+    rules:
+      promise/always-return: 'off'

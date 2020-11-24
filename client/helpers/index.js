@@ -6,25 +6,33 @@ export function controlNavState (dispatch) {
   if (isAuthenticated()) {
     dispatch(changeNavState('Logged In'))
     getUserInfo()
-      .then(userInfo => dispatch(addUserInfo({ username: userInfo.username })))
+      .then((userInfo) =>
+        dispatch(addUserInfo({ username: userInfo.username }))
+      )
+      .catch('an error occured dispatching username')
   } else dispatch(changeNavState('Logged Off'))
 }
 
 export const columns = [
-  { 'header': 'Name', 'property': 'name', 'primary': true, 'sortable': true, 'search': true },
-  { 'header': 'Dates', 'property': 'dates', 'sortable': true },
-  { 'header': 'Topic', 'property': 'topic', 'sortable': true },
-  { 'header': 'Description', 'property': 'description' }
+  {
+    header: 'Name',
+    property: 'name',
+    primary: true,
+    sortable: true,
+    search: true
+  },
+  { header: 'Dates', property: 'dates', sortable: true },
+  { header: 'Topic', property: 'topic', sortable: true },
+  { header: 'Description', property: 'description' }
 ]
 
 export const getData = (arr) => {
-  return arr.map(event => ({
-    'name': event.name,
-    'dates': event.date_start + '-' + event.date_end,
-    'topic': event.topic,
-    'description': event.description
-  })
-  )
+  return arr.map((event) => ({
+    name: event.name,
+    dates: event.date_start + '-' + event.date_end,
+    topic: event.topic,
+    description: event.description
+  }))
 }
 
 export const getImage = () => {
@@ -39,4 +47,5 @@ export const getImage = () => {
 export const labelStyle = {
   display: 'block',
   fontWeight: '600',
-  padding: '1rem' }
+  padding: '1rem'
+}

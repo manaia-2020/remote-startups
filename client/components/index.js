@@ -6,25 +6,21 @@ import RegisterComponent from './Register'
 import UserTabsComponent from './UserTabs'
 
 export function Home () {
-    return <HomeComponent />
+  return <HomeComponent />
 }
-
 
 export function Login () {
-    return <LoginComponent />
+  return <LoginComponent />
 }
-
 
 export function Register () {
-    return <RegisterComponent />
+  return <RegisterComponent />
 }
-
 
 export function Nav () {
-    return <NavComponent />
+  return <NavComponent />
 }
 
-
 export function UserTabs () {
-    return <UserTabsComponent />
+  return <UserTabsComponent />
 }

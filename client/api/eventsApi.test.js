@@ -1,6 +1,5 @@
 import nock from 'nock'
 import { addNewEvent, showAllEvents } from './eventsApi'
-const request = require('supertest')
 
 test('fetches events from server', () => {
   nock(/localhost/)
@@ -8,11 +7,10 @@ test('fetches events from server', () => {
     .reply(200, {
       event_id: 1,
       name: 'Test Event',
-      description: 'an event description',
+      description: 'an event description'
     })
 
   return showAllEvents().then((res) => {
-    expect(200)
     expect(res.event_id).toEqual(1)
     expect(res.name).toEqual('Test Event')
     return null

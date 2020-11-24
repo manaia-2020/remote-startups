@@ -30,7 +30,7 @@ export const Card = () => {
                   <Heading level="2" size="medium" margin="xsmall" textAlign="center" truncate={false}>
                     {event.name}
                   </Heading>
-                  <Image src="/server/public/project.images /project_image_019.svg" opacity="strong" />
+                  <Image src="/server/public/project.images/project_image_019.svg" opacity="strong" />
                   <Text weight="bold" textAlign="center" size="medium">
                   Dates: {event.date_start} - {event.date_ends}
                   </Text>

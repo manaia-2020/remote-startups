@@ -7,16 +7,25 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
+    "build": "webpack",
     "client": "webpack-dev-server --hot --inline",
     "dev": "run-p dev:client dev:server",
     "dev:client": "webpack --watch",
     "dev:server": "nodemon server",
+    "lint": "eslint client server",
+    "postinstall": "husky install",
+    "lint:fix": "eslint server client --fix",
     "start": "run-s build server",
-    "build": "webpack",
     "server": "node server",
     "test": "jest --watchAll",
-    "lint": "eslint client server",
-    "lint:fix": "eslint client server --fix"
+    "test:CI": "jest"
+  },
+  
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"[Husky] pre-commit\"lint"  ,
+      "pre-push": "echo \"[Husky] pre-push\"test:CI"
+    }
   },
   "babel": {
     "presets": [
@@ -58,6 +67,7 @@
     "eslint-config-eda": "^0.1.1",
     "file-loader": "^6.1.0",
     "grommet": "^2.15.0",
+    "husky": "^5.0.4",
     "jest": "^25.3.0",
     "knex": "^0.21.5",
     "nock": "^13.0.4",

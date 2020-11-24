@@ -6,7 +6,6 @@ import { Grommet } from 'grommet'
 import theme from './theme'
 import App from './components/App'
 
-
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
